@@ -6,23 +6,25 @@ import './App.css';
 
 function App() {
   // States
-  const [notes, setNotes] = useState([{
-    title: "title",
-    content: "hello",
-    date: "test"
-  }])
+  const [notes, setNotes] = useState([])
 
   // Initial Setup Effects
   useEffect(() => {
     noteService.getAll().then(notes =>
-      setNotes(notes),
+      setNotes(notes)
     )
   }, [])
 
   // Event Handlers
 
-  const addNote = (e) => {
-    return ('')
+  const addNote = (note) => {
+    const noteObject = note
+
+    noteService
+      .create(note)
+      .then(returnedNote => {
+        setNotes(notes.concat(returnedNote))
+      })
   }
 
   return (
