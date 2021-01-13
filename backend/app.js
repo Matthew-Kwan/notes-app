@@ -6,6 +6,7 @@ const cors = require('cors')
 const middleware = require('./utils/middleware')
 const logger = require('./utils/logger')
 const mongoose = require('mongoose')
+const notesRouter = require('./controllers/notes')
 
 logger.info('connecting to', config.MONGODB_URI)
 
@@ -26,4 +27,4 @@ app.use('/api/notes', notesRouter)
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)
 
-module.exports =app
+module.exports = app

@@ -2,7 +2,8 @@ const mongoose = require('mongoose')
 
 const noteSchema = new mongoose.Schema({
   title: { type: String, required: true},
-  content: { type: String }
+  content: { type: String },
+  date: { type: Date }
 })
 
 noteSchema.set('toJSON', {
