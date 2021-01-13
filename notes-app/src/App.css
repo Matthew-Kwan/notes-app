@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
   align-items: center;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -9,7 +9,16 @@
 }
 
 .noteForm {
-  width: 10%
+  width: 10%;
+}
+
+.noteTitle {
+  font-weight: bold;
+}
+
+.noteDate {
+  font-weight: lighter;
+  font-size: 0.5rem;
 }
 
 .noteTitleInput {
@@ -24,5 +33,9 @@
 
 .noteStyle {
   border: solid 0.1rem black;
-  width:10%
+  width:10%;
+}
+
+.submitInput {
+  display: none
 }

@@ -21,7 +21,7 @@ function App() {
     const noteObject = note
 
     noteService
-      .create(note)
+      .create(noteObject)
       .then(returnedNote => {
         setNotes(notes.concat(returnedNote))
       })

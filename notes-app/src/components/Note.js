@@ -5,7 +5,7 @@ const Note = ({ note }) => {
 
   return (
     <div className='noteStyle'>
-      <p className='noteTitle'> Title </p>
+      <p className='noteTitle'> {note.title} </p>
       <p className='noteContent'>{note.content}</p>
       <p className='noteDate'>{note.date}</p>
     </div>

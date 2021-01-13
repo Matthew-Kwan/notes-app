@@ -50,6 +50,7 @@ const NoteForm = ({ createNote }) => {
           placeholder="Type your note here..."
           onChange={handleChange}
         />
+        <input type="submit" className="submitInput"/>
       </form>
     </div>
   )
