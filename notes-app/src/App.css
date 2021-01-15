@@ -1,3 +1,9 @@
+input {
+  word-wrap: break-word;
+  word-break: break-all;
+  height: 1rem;
+}
+
 .App {
   text-align: left;
   align-items: center;
@@ -10,6 +16,7 @@
 
 .noteForm {
   width: 10%;
+  border: solid 0.1rem black
 }
 
 .noteTitle {
@@ -22,13 +29,25 @@
 }
 
 .noteTitleInput {
-  padding: 0.75rem 1.25rem 0.5rem 1.25rem;
-  border-bottom: none;
+  padding: 0.75rem 0rem 0.5rem 0rem;
+  border: none;
+  font-weight: bold;
+}
+
+.noteTitleInput:focus{
+  outline-width: 0;
 }
 
 .noteContentInput {
-  padding: 0.5rem 1.25rem 10rem 1.25rem;
-  border-top: none;
+  padding: 0.5rem 0rem 10rem 0rem;
+  border: none;
+  word-wrap: break-word;
+  word-break: break-all;
+  height: 1rem;
+}
+
+.noteContentInput:focus{
+  outline-width: 0;
 }
 
 .noteStyle {
