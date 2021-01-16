@@ -27,6 +27,27 @@ function App() {
       })
   }
 
+  const updateNote = (note) => {
+    const noteObject = note
+
+    noteService
+      .update(noteObject, note.id)
+      .then(returnedNote => {
+          setNotes(notes.map(n => (n.id === returnedNote.id ? returnedNote : n)))
+      })
+  }
+
+  const deleteNote = (note) => {
+
+    if(window.confirm('Do you really want to delete this note?')) {
+      noteService.deleteNote(note.id)
+      .then(response => {
+        noteService.getAll().then(noteList =>
+          setNotes(notes))
+      })
+    }
+  }
+
   return (
     <div className="App">
       <div>
@@ -34,7 +55,7 @@ function App() {
       </div>
       <div>
         {notes.map(note =>
-         <Note key={note.id} note={note}/>
+         <Note key={note.id} note={note} updateNote={updateNote}/>
         )}
         <NoteForm key='1' createNote={addNote}/>
       </div>

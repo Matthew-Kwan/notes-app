@@ -21,6 +21,25 @@ input {
 
 .noteTitle {
   font-weight: bold;
+  border: none;
+  resize: none;
+  padding: 0.5rem 0 0 0.25rem;
+  height: 1.5rem;
+}
+
+.noteTitle:focus {
+  outline-width: 0;
+}
+
+.noteContent {
+  border: none;
+  word-wrap: normal;
+  resize: none;
+  padding: 0 0 0 0.25rem
+}
+
+.noteContent:focus {
+  outline-width: 0;
 }
 
 .noteDate {
