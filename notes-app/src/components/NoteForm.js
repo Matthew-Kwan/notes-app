@@ -34,7 +34,8 @@ const NoteForm = ({ createNote }) => {
   return (
     <div>
       <form className="noteForm" onSubmit={addNote}>
-        <input
+        <textarea
+          wrap="soft"
           className="noteTitleInput"
           type="text"
           name="title"
@@ -42,12 +43,13 @@ const NoteForm = ({ createNote }) => {
           placeholder="Title"
           onChange={handleChange}
         />
-        <input
+        <textarea
+          wrap="soft"
           className="noteContentInput"
           type="text"
           name="content"
           value={newNote.content}
-          placeholder="Type your note here..."
+          placeholder="Type here..."
           onChange={handleChange}
         />
         <input type="submit" className="submitInput"/>
