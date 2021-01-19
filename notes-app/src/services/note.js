@@ -18,8 +18,8 @@ const update = async (note,id) => {
   return response.data
 }
 
-const deleteNote = async (note,id) => {
-  const response = await axios.delete(`${baseUrl}/${id}`,note)
+const deleteNote = async (id) => {
+  const response = await axios.delete(`${baseUrl}/${id}`)
   return response
 }
 

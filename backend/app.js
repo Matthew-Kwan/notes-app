@@ -21,6 +21,7 @@ mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology
 app.use(cors())
 app.use(express.static('build'))
 app.use(express.json())
+app.use(middleware.requestLogger) // Request logger has to show up before the routers because the requests go into the routers and disappear
 
 app.use('/api/notes', notesRouter)
 

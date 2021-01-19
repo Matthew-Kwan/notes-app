@@ -43,7 +43,7 @@ function App() {
       noteService.deleteNote(note.id)
       .then(response => {
         noteService.getAll().then(noteList =>
-          setNotes(notes))
+          setNotes(noteList))
       })
     }
   }
@@ -55,7 +55,7 @@ function App() {
       </div>
       <div>
         {notes.map(note =>
-         <Note key={note.id} note={note} updateNote={updateNote}/>
+         <Note key={note.id} note={note} updateNote={updateNote} deleteNote={deleteNote}/>
         )}
         <NoteForm key='1' createNote={addNote}/>
       </div>

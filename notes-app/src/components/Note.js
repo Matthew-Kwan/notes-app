@@ -11,6 +11,10 @@ const Note = ({ note, updateNote , deleteNote}) => {
     updateNote(note)
   }
 
+  const handleDelete = (note) => {
+    deleteNote(note)
+  }
+
   const handleChange = (e) => {
     e.preventDefault()
     const value = e.target.value
@@ -34,7 +38,7 @@ const Note = ({ note, updateNote , deleteNote}) => {
     <div className='noteStyle' onFocus={handleFocus} onBlur={handleBlur}>
       <textarea className='noteTitle' name='title' value={newNote.title} onChange={handleChange}/>
       <textarea className='noteContent' name='content' value={newNote.content} onChange={handleChange}/>
-      <p className='noteDate'>{note.date}</p>
+      <p className='noteDate'>{note.date} <button onClick={() => handleDelete(note)}>Delete</button></p>
     </div>
   )
 }
