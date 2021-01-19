@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../App.css';
 
-const Note = ({ note, updateNote , deleteNote}) => {
+const Note = ({ note, updateNote , deleteNote }) => {
 
   // Create a note state
   const [newNote, setNewNote] = useState(note)
@@ -34,11 +34,18 @@ const Note = ({ note, updateNote , deleteNote}) => {
     handleUpdate(newNote)
   }
 
+  const showDate = () => {
+    const castedDate = new Date(note.date)
+    console.log(castedDate)
+    return castedDate.toUTCString()
+
+  }
+
   return (
     <div className='noteStyle' onFocus={handleFocus} onBlur={handleBlur}>
       <textarea className='noteTitle' name='title' value={newNote.title} onChange={handleChange}/>
       <textarea className='noteContent' name='content' value={newNote.content} onChange={handleChange}/>
-      <p className='noteDate'>{note.date} <button onClick={() => handleDelete(note)}>Delete</button></p>
+      <p className='noteDate'>{showDate()} <button onClick={() => handleDelete(note)}>Delete</button></p>
     </div>
   )
 }
