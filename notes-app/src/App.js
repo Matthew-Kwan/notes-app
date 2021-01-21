@@ -54,7 +54,7 @@ function App() {
       <div>
         <h1>Notes</h1>
       </div>
-      <div>
+      <div className="noteList">
         {notes.map(note =>
          <Note key={note.id} note={note} updateNote={updateNote} deleteNote={deleteNote} isFocused={isFocused} setIsFocused={setIsFocused}/>
         )}
