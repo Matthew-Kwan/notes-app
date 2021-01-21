@@ -7,6 +7,7 @@ import './App.css';
 function App() {
   // States
   const [notes, setNotes] = useState([])
+  const [isFocused, setIsFocused] = useState(false)
 
   // Initial Setup Effects
   useEffect(() => {
@@ -55,7 +56,7 @@ function App() {
       </div>
       <div>
         {notes.map(note =>
-         <Note key={note.id} note={note} updateNote={updateNote} deleteNote={deleteNote}/>
+         <Note key={note.id} note={note} updateNote={updateNote} deleteNote={deleteNote} isFocused={isFocused} setIsFocused={setIsFocused}/>
         )}
         <NoteForm key='1' createNote={addNote}/>
       </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../App.css';
 
-const Note = ({ note, updateNote , deleteNote }) => {
+const Note = ({ note, updateNote , deleteNote, isFocused, setIsFocused }) => {
 
   // Create a note state
   const [newNote, setNewNote] = useState(note)
