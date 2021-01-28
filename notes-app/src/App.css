@@ -1,7 +1,15 @@
-body {
-  align-content: center;
-  align-items: center;
-  justify-content: center;
+.header {
+  display: inline-block;
+}
+
+.header:hover{
+  transition: 300ms ease;
+  background-image: linear-gradient(bottom, red, red 70%, transparent 70%, transparent 100%);
+  background-image: -webkit-linear-gradient(bottom, red, red 70%, transparent 70%, transparent 100%);
+}
+
+h1 {
+  display: inline-block;
 }
 
 input {
@@ -11,7 +19,7 @@ input {
 }
 
 .App {
-  text-align: left;
+  text-align: center;
   align-items: center;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -24,7 +32,8 @@ input {
   display: flex;
   flex-direction: column;
   min-height: 15vh;
-  border: solid 0.1rem black
+  border: solid 0.1rem black;
+  padding: 0 0.5rem 0 0.5rem;
 }
 
 .noteTitle {
@@ -43,7 +52,8 @@ input {
 .noteContent {
   flex: 4;
   border: none;
-  resize: vertical;
+  resize: none;
+  height: fit-content;
   overflow: hidden;
   padding: 0 0 0 0.25rem;
   margin-top: 0.5rem;
@@ -88,6 +98,7 @@ input {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 
 }
 
@@ -98,6 +109,11 @@ input {
   min-height: 15vh;
   width: 10%;
   margin: 1rem;
+}
+
+.noteStyle:focus-within {
+  transition: all 300ms ease;
+  box-shadow: 8px 8px rgb(77,250,144);
 }
 
 .submitInput {

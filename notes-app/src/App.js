@@ -51,7 +51,7 @@ function App() {
 
   return (
     <div className="App">
-      <div>
+      <div className="header hover" >
         <h1>Notes</h1>
       </div>
       <div className="noteList">

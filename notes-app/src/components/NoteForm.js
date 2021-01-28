@@ -20,8 +20,7 @@ const NoteForm = ({ createNote }) => {
     })
   }
 
-  const addNote = (e) => {
-    e.preventDefault()
+  const addNote = () => {
     createNote(newNote)
     setNewNote({
       title: '',
@@ -30,9 +29,18 @@ const NoteForm = ({ createNote }) => {
 
   }
 
+  const handleFocus = (e) => {
+    e.preventDefault()
+  }
+
+  const handleBlur = (e) => {
+    e.preventDefault()
+    addNote()
+  }
+
 
   return (
-    <div>
+    <div onFocus={handleFocus} onBlur={handleBlur} >
       <form className="noteForm" onSubmit={addNote}>
         <textarea
           wrap="soft"
