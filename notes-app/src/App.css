@@ -1,5 +1,6 @@
 .header {
   display: inline-block;
+  z-index:1;
 }
 
 .header:hover{

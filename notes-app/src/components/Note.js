@@ -47,7 +47,7 @@ const Note = ({ note, updateNote , deleteNote, isFocused, setIsFocused }) => {
   return (
     <div className='noteStyle' onFocus={handleFocus} onBlur={handleBlur}>
       <textarea wrap="soft" className='noteTitle' name='title' value={newNote.title} onChange={handleChange}/>
-      <textarea wrap="soft" className='noteContent' name='content' value={newNote.content} onChange={handleChange}/>
+      <textarea placeholder="Type your note here..." wrap="soft" className='noteContent' name='content' value={newNote.content} onChange={handleChange}/>
       <p className='noteDate'>{showDate()} <button onClick={() => handleDelete(note)}>Delete</button></p>
     </div>
   )
