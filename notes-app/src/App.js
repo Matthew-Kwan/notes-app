@@ -8,7 +8,6 @@ function App() {
   // States
   const [notes, setNotes] = useState([])
   const [isFocused, setIsFocused] = useState(false)
-  const [headerHovered, setHeaderHovered] = useState(false)
 
   // Initial Setup Effects
   useEffect(() => {
@@ -50,14 +49,16 @@ function App() {
     }
   }
 
-  const toggleHeaderHover = () => {
-    setHeaderHovered(!headerHovered)
-  }
+  // const toggleHeaderHover = () => {
+  //   setHeaderHovered(!headerHovered)
+  // }
 
   return (
     <div className="App">
-      <div className={!headerHovered ? 'header' : 'header hover'} onMouseEnter={toggleHeaderHover} onMouseLeave={toggleHeaderHover}>
-        <h1>Notes</h1>
+      <div className="headerContainer">
+        <div className="headerHover header">
+          <h1>Notes</h1>
+        </div>
       </div>
       <div className="noteList">
         {notes.map(note =>

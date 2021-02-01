@@ -1,12 +1,40 @@
+.headerContainer {
+  transition: 300ms ease;
+}
+
 .header {
   display: inline-block;
   z-index:1;
 }
 
-.header:hover{
+/* .header:hover{
   transition: 300ms ease;
   background-image: linear-gradient(bottom, red, red 70%, transparent 70%, transparent 100%);
   background-image: -webkit-linear-gradient(bottom, red, red 70%, transparent 70%, transparent 100%);
+} */
+
+.headerHover {
+  position: relative;
+  z-index: 1;
+}
+
+.headerHover:after {
+  position:absolute;
+  opacity: 0;
+  z-index:-1;
+  bottom:1.25rem;
+  left:0.75rem;
+  width:0%;
+  height:25%;
+  content:"";
+  background-color:rgba(182, 240, 148, 0.774);
+  transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+}
+
+.headerHover:hover:after {
+  opacity: 1;
+  width:100%;
 }
 
 h1 {
@@ -27,6 +55,7 @@ input {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: all 300ms ease;
 }
 
 .noteForm {
@@ -38,7 +67,7 @@ input {
 }
 
 .noteTitle {
-  flex: 1;
+  flex: 0;
   font-weight: bold;
   border: none;
   resize: none;
@@ -55,11 +84,9 @@ input {
   border: none;
   resize: none;
   height: fit-content;
-  overflow: hidden;
+  overflow: auto;
   padding: 0 0 0 0.25rem;
   margin-top: 0.5rem;
-
-
 }
 
 .noteContent:focus {
@@ -107,9 +134,10 @@ input {
   display: flex;
   border: solid 0.1rem black;
   flex-direction: column;
-  min-height: 15vh;
+  min-height: 25vh;
   width: 10%;
   margin: 1rem;
+  padding: 0.5rem;
 }
 
 .noteStyle:focus-within {
