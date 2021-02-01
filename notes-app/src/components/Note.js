@@ -39,9 +39,13 @@ const Note = ({ note, updateNote , deleteNote, isFocused, setIsFocused }) => {
     handleUpdate(newNote)
   }
 
+  function convertTZ(date, tzString) {
+    return new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", {timeZone: tzString}));
+  }
+
   const showDate = () => {
     const castedDate = new Date(note.date)
-    return castedDate.toUTCString()
+    return `Last Updated: ${castedDate.getFullYear()}-${castedDate.getMonth()+1}-${castedDate.getDate()} ${castedDate.getHours()}:${castedDate.getMinutes()}:${castedDate.getSeconds()}`
 
   }
 
