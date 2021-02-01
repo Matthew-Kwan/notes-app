@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 import '../App.css';
 
 const Note = ({ note, updateNote , deleteNote, isFocused, setIsFocused }) => {
@@ -6,7 +6,7 @@ const Note = ({ note, updateNote , deleteNote, isFocused, setIsFocused }) => {
   // Create a note state
   const [newNote, setNewNote] = useState(note)
   const [interval, setInterval] = useState(null)
-
+  const [changeCount, setChangeCount] = useState(0)
 
   const handleUpdate = (note) => {
     updateNote(note)
@@ -23,18 +23,19 @@ const Note = ({ note, updateNote , deleteNote, isFocused, setIsFocused }) => {
       ...newNote,
       [e.target.name]: value
     })
+    setChangeCount(changeCount + 1)
+
+    if (changeCount % 5 === 0) {
+      handleUpdate(newNote)
+    }
   }
 
   const handleFocus = (e) => {
     e.preventDefault()
-    setInterval(window.setInterval(() => {
-      handleUpdate(newNote)
-    }, 3000))
   }
 
   const handleBlur = (e) => {
     e.preventDefault()
-    clearInterval(interval)
     handleUpdate(newNote)
   }
 
